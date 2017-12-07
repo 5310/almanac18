@@ -148,6 +148,16 @@ main
     
     &[data-offset="0"][data-length="28"]::after
       content: none
+      
+    &[data-offset="1"]::before
+      content: ""
+      
+    @each $monthname in April, May, June, July
+      &[data-offset="1"][data-name="$monthname"]
+        &::before
+          content: attr(data-name)
+        &::after
+          content: none
 
     // Dates //
 
