@@ -1,0 +1,168 @@
+:root
+  --scale: 4.6
+  --length: 4
+  
+  font:
+    size: 3vmin
+    family: "Rajdhani", sans-serif
+    weight: 500
+
+@define-mixin mediaportrait
+  @media (max-aspect-ratio: 12/10)
+    @mixin-content
+
+@define-mixin maingrid
+  width: calc(7*1.2em*var(--scale))
+
+  display: grid
+  grid:
+    template-columns: repeat(7, 1fr)
+    gap: 0.5em
+  justify-content: stretch
+  align-items: stretch
+
+  list-style: none
+  
+  @mixin mediaportrait
+    width: calc(7*0.85em*var(--scale))
+
+body
+  width: 100vw
+  min-height: 100vh
+  overflow-x: hidden
+  
+  display: grid
+  justify-items: center
+
+header,
+footer
+  position: fixed
+  width: 100vw
+  display: grid
+  
+  justify-items: center
+  
+  font-weight: 300
+  
+  ul
+    @mixin maingrid
+    
+    text:
+      transform: uppercase
+      align: left
+  
+header
+  top: 2em
+  
+  .year
+    font-weight: 500
+    letter-spacing: 1.05em
+    margin-right: -1em
+  
+  .sign
+    grid-column-end: -1
+    justify-self: end
+    
+    img
+      height: 1em
+      margin-top: 0.2em
+    
+footer
+  bottom: 2em
+  ul
+    & > *:nth-child(7)
+      margin-right: -0.4em
+      
+      justify-self: end
+      
+      font-weight: 400
+      letter-spacing: 0.38em
+
+main
+  width: 100vw
+  min-height: calc(var(--length)*100vh)
+
+  display: grid
+  justify-items: center
+  align-items: center
+
+  .month
+    @mixin maingrid
+    height: calc(5*1em*var(--scale))
+    
+    @mixin mediaportrait
+      height: calc(5*1.1em*var(--scale))
+
+    border-bottom: 2px solid black
+
+    page-break-after: always
+
+    // Month labels //
+
+    &[data-offset]::before,
+    &[data-offset]::after
+      margin: 0
+        left: -0.07em
+        top: -0.22em
+        
+      font:
+        weight: 300
+        size: 2.2em
+      text-transform: uppercase
+      letter-spacing: -0.07em
+
+    &[data-offset="0"]::after,
+    &[data-offset="1"]::after
+      content: attr(data-name)
+      
+      grid:
+        column: span 2
+        column-end: -1
+      justify-self: end
+
+    &[data-offset]::before
+      content: attr(data-name)
+    
+    @for $i from 1 to 6
+      &[data-offset="$i"]::before
+        grid-column: span $(i)
+
+    &[data-offset="0"]::before
+      content: none
+    
+    &[data-offset="0"][data-length="28"]::before
+      content: attr(data-name)
+      grid-column: span 7
+    
+    &[data-offset="0"][data-length="28"]::after
+      content: none
+
+    // Dates //
+
+    & > li
+      display: block
+      padding-top: 1px
+      
+      border-top: 1px solid black
+      
+      font-size: 1.5em
+      
+      &[data-holiday]::after
+        display: block
+        height: 0px
+        
+        content: attr(data-holiday)
+        
+        font:
+          size: 0.5em
+          weight: 500
+
+    @for $i from 0 to 6
+      &[data-offset="$i"] > li:nth-child(7n-$i),
+      & > li[data-holiday] // I didn't want to duplicate the props
+        margin-top: -1px
+        padding-top: 0
+        
+        border-top-width: 3px
+        
+        font-weight: 700

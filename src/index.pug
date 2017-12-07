@@ -1,0 +1,42 @@
+extends _layouts/index.pug
+
+block head
+  title Almanac18
+  
+  meta(name='viewport', content='width=device-width, initial-scale=1')
+    
+  meta(name='mobile-web-app-capable', content='yes')
+  meta(name='theme-color', content='#FFFFFF')
+  link(rel='icon', type='image/png', sizes='512x512', href='_assets/favicons/512.png')
+  link(rel='icon', type='image/png', sizes='32x32', href='_assets/favicons/32.png')
+  link(rel='icon', type='image/png', sizes='16x16', href='_assets/favicons/16.png')
+  link(rel='manifest', href='manifest.json')
+    
+  link(rel='stylesheet', href='./index.css')
+  script(type='module', src='./index.js')
+
+block body
+
+  header 
+    ul
+      li.year 20XX
+      li.sign 
+        img(src='_assets/sign/sign.optimized.svg')
+
+  main
+    ul.month(data-offset=0, data-length=29, data-name="February")
+    ul.month(data-offset=6, data-length=31, data-name="May")
+    ul.month(data-offset=2, data-length=30, data-name="September")
+    ul.month(data-offset=6, data-length=31, data-name="May")
+  
+  footer
+    ul
+      li M
+      li T
+      li W
+      li T
+      li F
+      li S
+      li Sunday
+
+  script(src='./index.js')
