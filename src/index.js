@@ -1,9 +1,11 @@
-console.log(32313212)
+import createCalendar from './calendar.js'
+// import setHolidays from './holidays.js'
 
-document.querySelectorAll('.month')
-  .forEach((month) => month.innerHTML = new Array(parseInt(month.getAttribute('data-length')))
-    .fill()
-    .map((_, i) => i+1)
-    .map((d) => `<li${Math.random() > 0.75 ? ' data-holiday="Holiday"' : ''}>${d}</li>`)
-    .join('\n')
-  )
+const params = new window.URLSearchParams(window.location.search)
+const year = params.has('year') ? parseInt(params.get('year')) : new Date().getFullYear()
+// const region = params.get('region')
+
+createCalendar(year)
+
+// TODO: Tag holidays
+// setHolidays(year, region)
