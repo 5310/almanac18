@@ -7,7 +7,7 @@
     "serve": "port=$(shuf -i 2000-65000 -n 1); echo serving on: :$port; serve -STn -p $port dist & lt -p $port -s $(whoami)$(basename $PWD | sed 's/[^a-z^0-9]*//g')",
     "dev": "npm run build; npm run serve & npm run watch",
     "test": "npm run gulp test",
-    "deploy-gh-pages": "if [ ! -d './dist/.git' ]; then git -C dist init; git -C dist checkout -B gh-pages; git -C dist remote add origin $(git config --get remote.origin.url); fi; git -C dist add --all .; git -C dist reset $(git -C dist commit-tree  HEAD^{tree} -m '🆕'); git -C dist push -f origin HEAD",
+    "deploy-gh-pages": "if [ ! -d './dist/.git' ]; then git -C dist init; git -C dist checkout -B gh-pages; git -C dist remote add origin $(git config --get remote.origin.url); fi; git -C dist add --all . && git -C dist reset $(git -C dist commit-tree  HEAD^{tree} -m '🆕') || echo Committing && git -C dist add --all . && git -C dist commit -am '🆕'; git -C dist push -f origin HEAD",
     "deploy-surge": "echo Surge.sh not yet setup # surge",
     "deploy": "npm run build && (npm run deploy-gh-pages; npm run deploy-surge)"
   },
