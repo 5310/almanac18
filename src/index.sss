@@ -77,6 +77,9 @@ footer
       
       font-weight: 400
       letter-spacing: 0.38em
+      
+      @mixin mediaportrait
+        letter-spacing: 0.12em
 
 main
   width: 100vw
@@ -158,6 +161,14 @@ main
           content: attr(data-name)
         &::after
           content: none
+          
+    @mixin mediaportrait
+      @each $monthname in April, May, June, July
+        &[data-offset="1"][data-name="$monthname"]
+          &::before
+            transform: scaleX(0.9)
+              origin: 0
+              right: -1em
 
     // Dates //
 
