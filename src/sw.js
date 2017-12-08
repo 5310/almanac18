@@ -8,6 +8,7 @@ self.addEventListener('install', e => {
         '_layouts/index.css',
         'index.html',
         'index.js',
+        'index.css',
       ].map(r => CACHEBUST ? r + '?' + Math.random() : r))
     })
   )
