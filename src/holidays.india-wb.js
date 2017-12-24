@@ -11,21 +11,23 @@ export default {
     },
     { // March
       '1': 'Doljatra',
+      '2': 'Holi',
       '30': 'Good Friday',
     },
     { // April
       '1': 'Bank Holiday',
-      '14': "Ambedkar's B'day & Bengali New Year",
+      '14': "Ambedkar's B'day",
+      '15': 'Bengali New Year',
       '30': 'Buddha Purnima',
     },
     { // May
       '1': 'May Day',
-      '7': "Tagore's B'day",
+      '9': "Tagore's B'day",
       // '12': 'Shab-e-Barat',
     },
     { // June
+      '16': 'Eid al-Fitr',
       // '25': 'Rathajatra',
-      '15': 'Eid al-Fitr',
     },
     { // July
     },
@@ -36,7 +38,7 @@ export default {
       '22': 'Eid al-Zuha',
     },
     { // September
-      '30': 'Muharram',
+      '21': 'Muharram',
     },
     { // October
       '2': "Gandhi's B'day",
@@ -49,9 +51,9 @@ export default {
       '24': 'Lakshmi Puja',
     },
     { // November
-      '7': 'Kali Puja',
+      '6': 'Kali Puja',
       // '1': 'Bhatridwitiya',
-      '4': "Guru Nanak's B'day",
+      '23': "Guru Nanak's B'day",
     },
     { // December
       // '2': 'Fateha-e-Dwaj Daham',
