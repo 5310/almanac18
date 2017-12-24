@@ -12,13 +12,16 @@
     family: "Rajdhani", sans-serif
     weight: 500
 
+@page
+  size: A5 landscape
+
 @define-mixin mediaportrait
   @media (max-aspect-ratio: 12/10)
     @mixin-content
 
 @define-mixin maingrid
-  width: calc(7*1.2em*var(--scale))
 
+  width: calc(7*1.2em*var(--scale))
   display: grid
   grid:
     template-columns: repeat(7, 1fr)
