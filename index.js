@@ -28,17 +28,16 @@ var createCalendar = function (year) {
   createDays();
 };
 
-// TODO: Update with actual holidays
 var holidaysIndiaWB = {
-  '2018': [{ // January
+  '2018': [// https://wbxpress.com/holiday-list-2018/
+  { // January
     '12': "Vivekananda's B'day",
     '22': 'Saraswati Puja',
     '23': "Netaji's B'day",
     '26': 'Republic Day'
   }, {// February
   }, { // March
-    '1': 'Doljatra',
-    '2': 'Holi',
+    '2': 'Doljatra',
     '30': 'Good Friday'
   }, { // April
     '1': 'Bank Holiday',
@@ -46,19 +45,18 @@ var holidaysIndiaWB = {
     '15': 'Bengali New Year',
     '30': 'Buddha Purnima'
   }, { // May
-    '1': 'May Day',
+    '1': 'May Day & Shab-e-Barat',
     '9': "Tagore's B'day"
-    // '12': 'Shab-e-Barat',
   }, { // June
     '16': 'Eid al-Fitr'
-    // '25': 'Rathajatra',
-  }, {// July
+  }, { // July
+    '14': 'Rathajatra'
   }, { // August
-    // '7': 'Rakhi Purnima',
-    // '14': 'Janmashtami',
     '15': 'Independence Day',
-    '22': 'Eid al-Zuha'
+    '22': 'Eid al-Zuha',
+    '26': 'Rakhi Purnima'
   }, { // September
+    '2': 'Janmashtami',
     '21': 'Muharram'
   }, { // October
     '2': "Gandhi's B'day",
@@ -71,10 +69,10 @@ var holidaysIndiaWB = {
     '24': 'Lakshmi Puja'
   }, { // November
     '6': 'Kali Puja',
-    // '1': 'Bhatridwitiya',
+    '7': 'Diwali',
+    '9': 'Bhatridwitiya',
     '23': "Guru Nanak's B'day"
   }, { // December
-    // '2': 'Fateha-e-Dwaj Daham',
     '25': 'Christmas Day'
   }]
 };
