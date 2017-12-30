@@ -1,0 +1,407 @@
+@font-face {
+  font-family: Rajdhani;
+  font-style: normal;
+  font-weight: 300;
+  src: local("Rajdhani Light"),local(Rajdhani-Light),url(//fonts.gstatic.com/s/rajdhani/v6/em1T6bxBT1C9Ui5lcPwYd2fQcKutQXcIrRfyR5jdjY8.eot?#) format("eot"),url(//fonts.gstatic.com/s/rajdhani/v6/em1T6bxBT1C9Ui5lcPwYd44P5ICox8Kq3LLUNMylGO4.woff2) format("woff2"),url(//fonts.gstatic.com/s/rajdhani/v6/em1T6bxBT1C9Ui5lcPwYd4bN6UDyHWBl620a-IRfuBk.woff) format("woff");
+}
+
+@font-face {
+  font-family: Rajdhani;
+  font-style: normal;
+  font-weight: 400;
+  src: local("Rajdhani Regular"),local(Rajdhani-Regular),url(//fonts.gstatic.com/s/rajdhani/v6/krHgIyXYWx-DssE80G1TJPesZW2xOQ-xsNqO47m55DA.eot?#) format("eot"),url(//fonts.gstatic.com/s/rajdhani/v6/tz3398jtBIhi1rrADn6BZvesZW2xOQ-xsNqO47m55DA.woff2) format("woff2"),url(//fonts.gstatic.com/s/rajdhani/v6/5FqxpRLIg1FSapgVo_zNKfesZW2xOQ-xsNqO47m55DA.woff) format("woff");
+}
+
+@font-face {
+  font-family: Rajdhani;
+  font-style: normal;
+  font-weight: 500;
+  src: local("Rajdhani Medium"),local(Rajdhani-Medium),url(//fonts.gstatic.com/s/rajdhani/v6/fMdPRPskyY3ckg8ymVQ5NmfQcKutQXcIrRfyR5jdjY8.eot?#) format("eot"),url(//fonts.gstatic.com/s/rajdhani/v6/fMdPRPskyY3ckg8ymVQ5No4P5ICox8Kq3LLUNMylGO4.woff2) format("woff2"),url(//fonts.gstatic.com/s/rajdhani/v6/fMdPRPskyY3ckg8ymVQ5NobN6UDyHWBl620a-IRfuBk.woff) format("woff");
+}
+
+@font-face {
+  font-family: Rajdhani;
+  font-style: normal;
+  font-weight: 600;
+  src: local("Rajdhani SemiBold"),local(Rajdhani-SemiBold),url(//fonts.gstatic.com/s/rajdhani/v6/kA7V7gLI3uMMlXWrnQ_35WfQcKutQXcIrRfyR5jdjY8.eot?#) format("eot"),url(//fonts.gstatic.com/s/rajdhani/v6/kA7V7gLI3uMMlXWrnQ_35Y4P5ICox8Kq3LLUNMylGO4.woff2) format("woff2"),url(//fonts.gstatic.com/s/rajdhani/v6/kA7V7gLI3uMMlXWrnQ_35YbN6UDyHWBl620a-IRfuBk.woff) format("woff");
+}
+
+@font-face {
+  font-family: Rajdhani;
+  font-style: normal;
+  font-weight: 700;
+  src: local("Rajdhani Bold"),local(Rajdhani-Bold),url(//fonts.gstatic.com/s/rajdhani/v6/kcO_Mk7pjy8jlu86STaVz2fQcKutQXcIrRfyR5jdjY8.eot?#) format("eot"),url(//fonts.gstatic.com/s/rajdhani/v6/kcO_Mk7pjy8jlu86STaVz44P5ICox8Kq3LLUNMylGO4.woff2) format("woff2"),url(//fonts.gstatic.com/s/rajdhani/v6/kcO_Mk7pjy8jlu86STaVz4bN6UDyHWBl620a-IRfuBk.woff) format("woff");
+}
+
+:root {
+  --scale: 4.6;
+  --length: 12;
+
+  overflow-x: hidden;
+  scroll-snap-points-y: repeat(100%);
+  scroll-snap-type: mandatory;
+  
+  font-size: 3vmin;
+  
+  font-family: "Rajdhani", sans-serif;
+  
+  font-weight: 500;
+}
+
+@page {
+  size: A5 landscape;
+}
+
+body {
+  width: 100vw;
+  min-height: 100vh;
+  overflow-x: hidden;
+  
+  display: grid;
+  justify-items: center;
+}
+
+header,
+footer {
+  position: fixed;
+  width: 100vw;
+  display: grid;
+  
+  justify-items: center;
+  
+  font-weight: 300;
+}
+
+header ul, footer ul {
+    width: calc(8.4em * var(--scale));
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-gap: 0.5em;
+    justify-content: stretch;
+    align-items: stretch;
+    list-style: none;
+}
+
+@media (max-aspect-ratio: 12/10) {
+
+  header ul, footer ul {
+    width: calc(5.95em * var(--scale));
+  }
+}
+
+header ul, footer ul {
+  text-transform: uppercase;
+  text-align: left;
+}
+  
+header {
+  top: 2em;
+}
+  
+header .year {
+    font-weight: 500;
+    letter-spacing: 1.05em;
+    margin-right: -1em;
+}
+  
+header .sign {
+    grid-column-end: -1;
+    justify-self: end;
+}
+  
+header .sign img {
+      height: 1em;
+      margin-top: 0.2em;
+}
+    
+footer {
+  bottom: 2em;
+}
+    
+footer ul > *:nth-child(7) {
+      margin-right: -0.4em;
+      
+      justify-self: end;
+      
+      font-weight: 400;
+      letter-spacing: 0.38em;
+}
+    
+@media (max-aspect-ratio: 12/10) {
+
+  footer ul > *:nth-child(7) {
+    letter-spacing: 0.12em;
+  }
+}
+
+main {
+  width: 100vw;
+  min-height: calc(var(--length) * 100vh);
+
+  display: grid;
+  grid-template-rows: repeat(var(--length), 1fr);
+  justify-items: center;
+  align-items: center;
+}
+
+main .month {
+    width: calc(8.4em * var(--scale));
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-gap: 0.5em;
+    justify-content: stretch;
+    align-items: stretch;
+    list-style: none;
+}
+
+@media (max-aspect-ratio: 12/10) {
+
+  main .month {
+    width: calc(5.95em * var(--scale));
+  }
+}
+
+main .month {
+  height: calc(5em * var(--scale));
+}
+
+@media (max-aspect-ratio: 12/10) {
+
+  main .month {
+    height: calc(5.5em * var(--scale));
+  }
+}
+
+main .month {
+  border-bottom: 2px solid black;
+  page-break-after: always;
+}
+
+@media (max-aspect-ratio: 12/10) {
+
+  main .month[data-name="November"]::before {
+    transform:  scaleX(0.9);
+    transform-origin: 0;
+  }
+
+  main .month[data-name="December"]::before {
+    transform:  scaleX(0.9);
+    transform-origin: 0;
+  }
+
+  main .month[data-name="September"]::before {
+    transform:  scaleX(0.85);
+    transform-origin: 0;
+  }
+}
+
+main .month[data-offset="1"]::before {
+  grid-column: span 1;
+}
+
+main .month[data-offset="2"]::before {
+  grid-column: span 2;
+}
+
+main .month[data-offset="3"]::before {
+  grid-column: span 3;
+}
+
+main .month[data-offset="4"]::before {
+  grid-column: span 4;
+}
+
+main .month[data-offset="5"]::before {
+  grid-column: span 5;
+}
+
+main .month[data-offset="6"]::before {
+  grid-column: span 6;
+}
+
+main .month[data-offset="1"][data-name="April"]::before {
+  content: attr(data-name);
+}
+
+main .month[data-offset="1"][data-name="April"]::after {
+  content: none;
+}
+
+main .month[data-offset="1"][data-name="May"]::before {
+  content: attr(data-name);
+}
+
+main .month[data-offset="1"][data-name="May"]::after {
+  content: none;
+}
+
+main .month[data-offset="1"][data-name="June"]::before {
+  content: attr(data-name);
+}
+
+main .month[data-offset="1"][data-name="June"]::after {
+  content: none;
+}
+
+main .month[data-offset="1"][data-name="July"]::before {
+  content: attr(data-name);
+}
+
+main .month[data-offset="1"][data-name="July"]::after {
+  content: none;
+}
+
+@media (max-aspect-ratio: 12/10) {
+
+  main .month[data-offset="1"][data-name="April"]::before {
+    transform:  scaleX(0.9);
+    transform-origin: 0;
+    transform-right: -1em;
+  }
+
+  main .month[data-offset="1"][data-name="May"]::before {
+    transform:  scaleX(0.9);
+    transform-origin: 0;
+    transform-right: -1em;
+  }
+
+  main .month[data-offset="1"][data-name="June"]::before {
+    transform:  scaleX(0.9);
+    transform-origin: 0;
+    transform-right: -1em;
+  }
+
+  main .month[data-offset="1"][data-name="July"]::before {
+    transform:  scaleX(0.9);
+    transform-origin: 0;
+    transform-right: -1em;
+  }
+}
+
+main .month[data-offset="0"] > li:nth-child(7n-0),
+      main .month > li[data-holiday] {
+  margin-top: -1px;
+  padding-top: 0;
+  border-top-width: 3px;
+  font-weight: 700;
+}
+
+main .month[data-offset="1"] > li:nth-child(7n-1),
+      main .month > li[data-holiday] {
+  margin-top: -1px;
+  padding-top: 0;
+  border-top-width: 3px;
+  font-weight: 700;
+}
+
+main .month[data-offset="2"] > li:nth-child(7n-2),
+      main .month > li[data-holiday] {
+  margin-top: -1px;
+  padding-top: 0;
+  border-top-width: 3px;
+  font-weight: 700;
+}
+
+main .month[data-offset="3"] > li:nth-child(7n-3),
+      main .month > li[data-holiday] {
+  margin-top: -1px;
+  padding-top: 0;
+  border-top-width: 3px;
+  font-weight: 700;
+}
+
+main .month[data-offset="4"] > li:nth-child(7n-4),
+      main .month > li[data-holiday] {
+  margin-top: -1px;
+  padding-top: 0;
+  border-top-width: 3px;
+  font-weight: 700;
+}
+
+main .month[data-offset="5"] > li:nth-child(7n-5),
+      main .month > li[data-holiday] {
+  margin-top: -1px;
+  padding-top: 0;
+  border-top-width: 3px;
+  font-weight: 700;
+}
+
+main .month[data-offset="6"] > li:nth-child(7n-6),
+      main .month > li[data-holiday] {
+  margin-top: -1px;
+  padding-top: 0;
+  border-top-width: 3px;
+  font-weight: 700;
+}
+
+/* Month labels // */
+
+main .month[data-offset]::before,
+    main .month[data-offset]::after {
+      margin:  0;
+      margin-left: -0.07em;
+      margin-top: -0.22em;
+      margin-bottom: -2em;
+        
+      font-weight: 300;
+        
+      font-size: 2.2em;
+      text-transform: uppercase;
+      letter-spacing: -0.07em;
+}
+
+/*TODO: Consider scroll snaps */
+
+main .month[data-offset="0"]::after,
+    main .month[data-offset="1"]::after {
+      content: attr(data-name);
+      
+      grid-column: span 2;
+      
+      grid-column-end: -1;
+      justify-self: end;
+}
+
+main .month[data-offset]::before {
+      content: attr(data-name);
+}
+
+main .month[data-offset="0"]::before {
+      content: none;
+}
+
+main .month[data-offset="0"][data-length="28"]::before {
+      content: attr(data-name);
+      grid-column: span 7;
+}
+
+main .month[data-offset="0"][data-length="28"]::after {
+      content: none;
+}
+
+main .month[data-offset="1"]::before {
+      content: "";
+}
+
+/* Dates // */
+
+main .month > li {
+      display: block;
+      padding-top: 1px;
+      
+      border-top: 1px solid black;
+      
+      font-size: 1.5em;
+}
+
+main .month > li[data-holiday]::after {
+        display: block;
+        height: 0px;
+        
+        content: attr(data-holiday);
+        
+        font-size: 0.4em;
+        
+        font-weight: 500;
+        line-height: 1em;
+}
