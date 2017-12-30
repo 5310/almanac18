@@ -1,6 +1,5 @@
-// TODO: Update with actual holidays
 export default {
-  '2018': [
+  '2018': [ // https://wbxpress.com/holiday-list-2018/
     { // January
       '12': "Vivekananda's B'day",
       '22': 'Saraswati Puja',
@@ -10,8 +9,7 @@ export default {
     { // February
     },
     { // March
-      '1': 'Doljatra',
-      '2': 'Holi',
+      '2': 'Doljatra',
       '30': 'Good Friday',
     },
     { // April
@@ -21,23 +19,22 @@ export default {
       '30': 'Buddha Purnima',
     },
     { // May
-      '1': 'May Day',
+      '1': 'May Day & Shab-e-Barat',
       '9': "Tagore's B'day",
-      // '12': 'Shab-e-Barat',
     },
     { // June
       '16': 'Eid al-Fitr',
-      // '25': 'Rathajatra',
     },
     { // July
+      '14': 'Rathajatra',
     },
     { // August
-      // '7': 'Rakhi Purnima',
-      // '14': 'Janmashtami',
       '15': 'Independence Day',
       '22': 'Eid al-Zuha',
+      '26': 'Rakhi Purnima',
     },
     { // September
+      '2': 'Janmashtami',
       '21': 'Muharram',
     },
     { // October
@@ -52,11 +49,11 @@ export default {
     },
     { // November
       '6': 'Kali Puja',
-      // '1': 'Bhatridwitiya',
+      '7': 'Diwali',
+      '9': 'Bhatridwitiya',
       '23': "Guru Nanak's B'day",
     },
     { // December
-      // '2': 'Fateha-e-Dwaj Daham',
       '25': 'Christmas Day',
     },
   ]
